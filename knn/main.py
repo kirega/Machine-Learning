@@ -30,6 +30,7 @@ ___________________________________________
 		print
 
 		self.load_data()
+		
 
 	def load_data(self):
 		chosen = int(raw_input("Choose the data file to load : ", ))
@@ -60,8 +61,18 @@ ___________________________________________
 
 		print "The data has ",self.no_samples, "samples and has ", self.attributes, " attributes."
 
-		# for i in self.data:
-		# 	print i
+
+	def validate_data(self):
+		attributes = self.attributes
+		data = self.data
+		no_samples = self.no_samples
+
+		valid_data = True
+		for i in self.data:
+			if len(i) != attributes + 1:
+				valid_data = False
+		return valid_data
+		
 
 	def load_sample(self):
 		attributes = self.attributes
@@ -79,3 +90,7 @@ ___________________________________________
 	
 knn = KNN()
 knn.load_sample()
+if knn.validate_data():
+	print "The data is valid. Continue\n"
+else:
+	print "The data has an error, exiting..."
