@@ -11,18 +11,17 @@ class KNN():
 		"""
 		
 		self.data = []
-		self.sample = []
 		
 		# load the data
 		with open("data.json", "r") as f:
 			for line in f:
 				sample = line.strip('\n').split(' ')
+				one_sample = []
 				for x in sample:
-					print int(x),
-				print
-			
-		
+					one_sample.append(int(x))
+				self.data.append(one_sample)
 		
 	pass
 	
 knn = KNN()
+print knn.data
