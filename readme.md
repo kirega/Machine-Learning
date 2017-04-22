@@ -1,9 +1,10 @@
 # Machine Learning Assignments
 
-## KNN - Tested with all the three files provided
+### KNN - Tested with all the three files provided
 
-Class KNN Methods
-    __init__
+> Class KNN Methods
+
+    init
         Lists the available files for reading
         Calls the load_data method
 
